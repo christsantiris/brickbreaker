@@ -11,6 +11,37 @@ function init() {
   let paddleX = (canvas.width - paddleWidth)/2;
   let rightPressed = false;
   let leftPressed = false;
+  let brickRowCount = 3;
+  let brickColumnCount = 5;
+  let BrickWidth = 75;
+  let BrickHeight = 20;
+  let BrickPadding = 10;
+  let BrickOffsetTop = 30;
+  let BrickOffsetLeft = 30;
+
+  const bricks = [];
+  for (c = 0; c < brickColumnCount; c++) {
+    bricks[c] = [];
+    for (r = 0; r < brickRowCount; r++) {
+      bricks[c][r] = { x: 0, y: 0};
+    }
+  }
+
+  function drawBricks () {
+    for (c = 0; c < brickColumnCount; c++) {
+      for (r = 0; r < brickRowCount; r++) {
+        let brickX = (c*(BrickWidth + BrickPadding)) + BrickOffsetLeft;
+        let brickY = (r*(BrickHeight + BrickPadding)) + BrickOffsetTop;
+        bricks[c][r].x = brickX;
+        bricks[c][r].y = brickY;
+        ctx.beginPath();
+        ctx.rect(brickX, brickY, BrickWidth, BrickHeight);
+        ctx.fillStyle = "0095DD";
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+  }
 
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
@@ -53,6 +84,7 @@ function init() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
+    drawBricks();
 
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
       dx = -dx;
@@ -65,8 +97,8 @@ function init() {
         dy = -dy;
       }
       else {
-        alert("GAME OVER");
-        document.location.reload();
+        window.alert("GAME OVER");
+        window.location.reload();
       }
     }
 
