@@ -93,6 +93,11 @@ function collisionDetection() {
             dy = -dy;
             b.status = 0;
             score++;
+            if (score == brickRowCount*brickColumnCount) {
+              console.log(brickRowCount*brickColumnCount)
+              alert("You Win!");
+              window.location.reload();
+            }
         }
       }
     }
@@ -100,7 +105,7 @@ function collisionDetection() {
 }
 
 function drawScore () {
-  ctx.font = "16px Helvetica";
+  ctx.font = "18px Helvetica";
   ctx.fillStyle = "#0095DD";
   ctx.fillText("Score: " + score, 8, 20);
 }
