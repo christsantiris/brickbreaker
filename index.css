@@ -8,6 +8,10 @@ canvas {
 body {
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-image: url('https://www.highspot.com/wp-content/uploads/highspot-4-building-blocks-to-sales-enablement.png');
+  background-repeat: no-repeat;
 }
 h1 {
   text-align: center;
