@@ -22,6 +22,7 @@ function init() {
 
   document.addEventListener("keydown",keyDownHandler,false);
   document.addEventListener("keyup",keyUpHandler,false);
+  document.addEventListener("mousemove", mouseMoveHandler, false);
 
   let bricks = [];
   for(c=0; c<brickColumnCount; c++) {
@@ -29,6 +30,13 @@ function init() {
       for(r=0; r<brickRowCount; r++) {
         bricks[c][r] = { x: 0, y: 0, status: 1 };
       }
+  }
+
+  function mouseMoveHandler(e) {
+    let relativeX = e.clientX - canvas.offsetLeft;
+    if (relativeX > 0 && relativeX < canvas.width) {
+      paddleX = relativeX - paddleWidth/2;
+    }
   }
 
   function keyDownHandler(e){
