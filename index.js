@@ -168,7 +168,8 @@ function draw(){
 	}
 		 x=x+dx;
 	   y=y+dy;
+     requestAnimationFrame(draw);
 	}
-  setInterval(draw,10);
+  draw();
  }
    document.addEventListener('DOMContentLoaded', init)
