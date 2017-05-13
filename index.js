@@ -22,10 +22,10 @@ function init() {
   let lives = 3;
 
   let bricks = [];
-  for(c=0; c<brickRowCount; c++) {
-    bricks[c] = [];
-    for(r=0; r<brickColumnCount; r++) {
-      bricks[c][r] = { x: 0, y: 0, status: 1 };
+  for(r=0; r<brickRowCount; r++) {
+    bricks[r] = [];
+    for(c=0; c<brickColumnCount; c++) {
+      bricks[r][c] = { x: 0, y: 0, status: 1 };
     }
   }
 
