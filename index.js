@@ -32,6 +32,15 @@ function init() {
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
   document.addEventListener("mousemove", mouseMoveHandler, false);
+  document.addEventListener("keydown", restartGame, false);
+
+  function restartGame(e) {
+    if (e.keyCode == 82) {
+      document.location.reload(true);
+      console.log("reloaded");
+      return true
+    }
+  }
 
   function keyDownHandler(e) {
     if(e.keyCode == 39) {
