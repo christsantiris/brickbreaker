@@ -127,7 +127,7 @@ function init() {
   }
 
   function drawLives() {
-    ctx.font = "16px Arial";
+    ctx.font = "16px Helvetica";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Lives: "+lives, canvas.width-65, 20);
   }
