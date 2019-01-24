@@ -12,7 +12,7 @@ function init() {
   let rightPressed = false;
   let leftPressed = false;
   let brickRowCount = 5;
-  let brickColumnCount = 11;
+  let brickColumnCount = 5;
   let brickWidth = 75;
   let brickHeight = 20;
   let brickPadding = 10;
